@@ -24,17 +24,18 @@ pipeline{
                 deploy adapters: [tomcat7(credentialsId: 'uuuu', path: '', url: 'http://192.168.159.134:8080')], contextPath: '/app', war: '**/*.war'
             }
         }
-
-        post { 
-        always { 
-            echo 'I will always say Hello again!'
-        }
-        failure { 
-        echo 'failure!'
-        }
-        success { 
-        echo 'success!'
-        }
-       }
     }
+        post { 
+            always { 
+            echo 'I will always say Hello again!'
+            }
+                failure { 
+                
+            echo 'failure!'
+            }
+            success { 
+                echo 'success!'
+            }
+        }
+            
 }
